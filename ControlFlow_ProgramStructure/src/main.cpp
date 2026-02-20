@@ -2,6 +2,8 @@
 #include "integer_utils.hpp"
 #include "string_utils.hpp"
 #include "grade_utils.hpp"
+#include "while_count_utils.hpp"
+#include "do_while_count_utils.hpp"
 using std::cout, std::cin, std::endl;
 
 int main() {
@@ -23,6 +25,15 @@ int main() {
 				return 0;
 			}
 			break;
+		case 4:
+			while_count_utils::runWhileCount();
+			break;
+		case 5:
+			do_while_count_utils::runDoWhileCount();
+			break;
+		case 6:
+			break;
+		
 	}
 	
 }
