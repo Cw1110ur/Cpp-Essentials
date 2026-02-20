@@ -16,11 +16,8 @@ namespace Integer_utils {
 		int quotient = first / second;
 		std::cout << "Result: " << quotient << "\n"  << std::endl;
 
-		// Below are the increments post and pre
-		int post = first;
-		int pre = first;
-		std::cout << "After post-increment: " << post++ << std::endl;
-		std::cout << "After pre-increment: " << ++pre << std::endl;
+		std::cout << "After post-increment: " << first++ << std::endl;
+		std::cout << "After pre-increment: " << ++first << std::endl;
 		return;
 		
 	}

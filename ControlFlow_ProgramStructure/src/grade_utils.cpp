@@ -11,27 +11,27 @@ namespace Grade_utils {
 		cout << "Enter numeric grade: ";
 		cin >> grade;
 		if (grade < 0 || grade > 100) {
-			cout << "Invalid Grade\n";
-			return false;
+			cout << "Invalid grade" << endl;
+			return 1;
 		}
 		
-		if (letter == 'U') {
+		if (letter == 'U' || letter == 'u') {
 			if (grade >= 60) {
-				cout << "Pass" << endl;
+				cout << "Status: Pass" << endl;
 			}
 			else {
-				cout << "Fail" << endl;
+				cout << "Status: Fail" << endl;
 			}
 		}
-		else if (letter == 'G') {
+		else if (letter == 'G' || letter == 'g') {
 			if (grade >= 70) {
-				cout << "Pass" << endl;
+				cout << "Status: Pass" << endl;
 			}
 			else {
-				cout << "Fail" << endl;
+				cout << "Status: Fail" << endl;
 			}
 		}
-		return grade;
+		return 0;
 	}
 }
 	

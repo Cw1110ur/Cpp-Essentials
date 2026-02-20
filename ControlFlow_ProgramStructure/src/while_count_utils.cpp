@@ -12,7 +12,7 @@ namespace while_count_utils {
 			std::cout << "Enter a number to count to: ";
 			std::cin >> target;
 		}
-		int count = 1;
+		int count = 0;
 		while (count <= target) {
         		if (count != 5) {
             		std::cout << count << std::endl;
