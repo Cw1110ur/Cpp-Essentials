@@ -1,14 +1,20 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include "text_mode.h"
 using std::string, std::endl, std::cout, std::cin;
 
 namespace text_mode {
         void run(int argc, char* argv[]) {
-                string cstring(argv[2]);
-		cout << "Converted: " << cstring << endl;
-		cout << "Original: " << argv[2] << endl;
-		cout << cstring.size() << endl;
+                if (argc < 3) { 
+			cout << "Usage" << endl; 
+			return; 
+		}
+		
+		string cstring(argv[2]);
+		cout << "Original " << argv[2] << endl;
+		//cout << "Converted " << cstring << endl;
+		cout << "Length " << cstring.size() << endl;
 
 		size_t letters = 0;
 		size_t digits = 0;
@@ -30,37 +36,37 @@ namespace text_mode {
 			}
 		}
 		
-		cout << "Letters: " << letters << endl;
-		cout << "Digits: " << digits << endl;
-		cout << "Spaces: " << spaces << endl;
-		cout << "Punctuations: " << puncts << endl;
+		cout << "Letters " << letters << endl;
+		cout << "Digits " << digits << endl;
+		cout << "Spaces " << spaces << endl;
+		cout << "Punctuation " << puncts << endl;
 
 		string upper = cstring;
-		for (char& c : upper) {
-			if (std::isalpha(c)) {
-				c = std::toupper(c);
-			}
-		}
-		cout << upper << endl;
+		for (size_t i = 0; i < upper.size(); i++) { 
+			if (std::isalpha(upper[i])) { 
+				upper[i] = std::toupper(upper[i]); 
+			} 
+		} 
+		cout << "Uppercase " << upper << endl;
 		
-		string lower = cstring;
-		for (char& c : lower) {
-			if (std::isalpha(c)) {
-				c = std::tolower(c);
-			}
-		}
-		cout << lower << endl;
+		string lower = cstring; 
+		for (size_t i = 0; i < lower.size(); i++) { 
+			if (std::isalpha(lower[i])) { 
+				lower[i] = std::tolower(lower[i]); 
+			} 
+		} 
+		cout << "Lowercase " << lower << endl;
 
-		if (cstring.find("test") != string::npos) {
-			cout << "Found test" << endl;
+		if (lower.find("test") != string::npos) {
+			cout << "Contains test Yes" << endl;
 		}
 		else {
-			cout << "Did not find test" << endl;
+			cout << "Contains test No" << endl;
 		}
 
 		size_t pos = cstring.find(" ");
 		if (pos != string::npos) {
-			cout << cstring.substr(0, pos) << endl;
+			cout << "First word " << cstring.substr(0, pos) << endl;
 		}
 	}
 }
